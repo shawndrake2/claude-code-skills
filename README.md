@@ -8,19 +8,31 @@ A collection of custom skills for [Claude Code](https://claude.ai/code).
 |-------|-------------|
 | [git-clean-local](.claude/skills/git-clean-local/SKILL.md) | Cleans up local workspace after merging a git feature branch from an open PR |
 
-## Installation
+## Usage
 
-Add this repository as an additional directory in your Claude Code `settings.json`:
+Clone this repository, then point Claude Code at it using the `--add-dir` flag:
 
-```json
-{
-  "additionalDirectories": [
-    "/path/to/claude-code-skills"
-  ]
-}
+```bash
+git clone https://github.com/drakestr/claude-code-skills.git
+claude --add-dir /path/to/claude-code-skills
 ```
 
-Skills in `.claude/skills/` are automatically discovered and available immediately.
+Skills in `.claude/skills/` are automatically discovered and available immediately. You can invoke any skill by name during a conversation.
+
+> [!NOTE]
+> The recommended approach is to add this as an additional directory via `settings.json`:
+>
+> ```json
+> {
+>   "permissions": {
+>     "additionalDirectories": [
+>       "/path/to/claude-code-skills"
+>     ]
+>   }
+> }
+> ```
+>
+> However, this is currently broken due to a [known bug](https://github.com/anthropics/claude-code/issues/30064). Use the `--add-dir` flag as a workaround until the issue is resolved.
 
 ## Structure
 
