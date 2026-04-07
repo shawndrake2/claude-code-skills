@@ -1,0 +1,11 @@
+{
+  "name": "claude-code-skills",
+  "version": "1.0.0",
+  "description": "A collection of custom skills for Claude Code.",
+  "keywords": [
+    "claude",
+    "claude-code",
+    "skills"
+  ],
+  "license": "MIT"
+}
